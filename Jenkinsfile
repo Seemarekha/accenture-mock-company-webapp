@@ -5,15 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                sh './gradlew assemble' // for Unix/Linux/Mac
-                // bat 'gradlew assemble' // if you're using Windows with bat support
+                bat 'gradlew assemble' // for Windows 
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh './gradlew test' // for Unix/Linux/Mac
-                // bat 'gradlew test' // for Windows
+                bat 'gradlew test' // for Windows
             }
         }
     }
